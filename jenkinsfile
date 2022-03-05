@@ -1,14 +1,6 @@
 pipeline {
   agent any
-  options {
-   buildDiscarder(logRotator(numToKeepStr: '2'))
-   disableConcurrentBuilds()
-  }
-  triggers { 
-       pollSCM('*****')
-       }
-  stages {
-  
+  stages { 
   stage('Declarative Checkout')
    steps {
     checkout scm
